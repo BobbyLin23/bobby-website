@@ -1,0 +1,41 @@
+---
+interface PostList {
+  title: string;
+  date: string;
+}
+
+const postList : PostList[] = [
+  {
+    title: 'Hello World',
+    date: '2023-05-24'
+  },
+  {
+    title: 'Hello World',
+    date: '2023-05-24'
+  },
+  {
+    title: 'Hello World',
+    date: '2023-05-24'
+  }
+]
+---
+
+<div mt-10>
+  <header class="flex" items-center justify-between my-4>
+    <h1 text-2xl font-semibold>Latest Posts</h1>
+    <div
+      class="i-carbon-arrow-up-right cursor-pointer text-neutral-600 hover:text-neutral-400"
+    >
+    </div>
+  </header>
+  <ul>
+    {
+      postList.map((post) => (
+        <div class="flex" items-center justify-between my-2 py-2 px-2 cursor-pointer hover:bg-neutral-3 rounded-md>
+          <p text-md leading-6>{post.title}</p>
+          <p text-sm text-neutral-600>{post.date}</p>
+        </div>
+      ))
+    }
+  </ul>
+</div>

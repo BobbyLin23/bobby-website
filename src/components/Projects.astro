@@ -1,0 +1,58 @@
+---
+interface ProjectList {
+  title: string;
+  description: string;
+  href: string;
+  logo: string;
+}
+
+import ProjectCard from "./ProjectCard.astro";
+const projects: ProjectList[] = [
+  {
+    title: "Interview Fox",
+    description: "AI interview helper",
+    href: "https://interview-fox.vercel.app/",
+    logo: "",
+  },
+  {
+    title: "Rate Everything",
+    description: "You can rate everything here",
+    href: "https://interview-fox.vercel.app/",
+    logo: "",
+  },
+  {
+    title: "Running Now!",
+    description: "App for automatically plan running routes",
+    href: "https://interview-fox.vercel.app/",
+    logo: "",
+  },
+  {
+    title: "Shanghai SDC Map",
+    description: "Shanghai school district housing map",
+    href: "https://interview-fox.vercel.app/",
+    logo: "",
+  },
+];
+---
+
+<div class="mt-8">
+  <header class="flex items-center justify-between my-4">
+    <h1 text-2xl font-semibold>Projects</h1>
+    <div
+      class="i-carbon-arrow-up-right cursor-pointer text-neutral-600 hover:text-neutral-400"
+    >
+    </div>
+  </header>
+  <div class="grid" grid-cols-2 gap-4>
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          href={project.href}
+          logo={project.logo}
+        />
+      ))
+    }
+  </div>
+</div>

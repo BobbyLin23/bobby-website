@@ -1,14 +1,33 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Footer from '../components/Footer.astro';
+import LatestPosts from '../components/LatestPosts.astro';
+import Projects from '../components/Projects.astro';
+import SocialMenus from '../components/SocialMenus.astro';
+import '../styles/global.css'
 ---
 
-<Layout title="Bobby Lin">
-  <main>
-    <h1>Hello, I'm Bobby Lin</h1>
-    <p>Front-end developer</p>
-    <p>Want to be a independent developer</p>
-    <div></div>
-  </main>
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Bobby Lin</title>
+  </head>
+  <body>
+    <div class="px-6 py-[8vh] max-w-[76ch] mx-auto xl:text-lg">
+      <h1 font-bold text-4xl>Hello,</h1>
+      <h1 font-bold text-4xl>I am Bobby Lin.</h1>
+      <p mt-2>Front-end Developer</p>
+      <p mt-2>Want to be an independent developer</p>
+      <p mt-2>I like making interesting projects</p>
+      <SocialMenus />
+      <Projects />
+      <LatestPosts />
+      <Footer />
+    </div>
+  </body>
+</html>
+
+
 
 <style></style>
