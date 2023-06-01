@@ -3,6 +3,11 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
 }
 
+html.dark {
+  background-color: rgba(34, 34, 34, 1);
+  color: #fff;
+}
+
 body {
   margin: 0;
   width: 100%;

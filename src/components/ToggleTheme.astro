@@ -1,0 +1,39 @@
+---
+---
+
+<button id="toggleTheme">
+  <div
+    class="i-carbon-sun dark:i-carbon-moon absolute top-1 right-5 hover:text-neutral"
+  >
+  </div>
+</button>
+
+<script>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+
+  window.localStorage.setItem("theme", theme!);
+
+  const handleToggleClick = () => {
+    document.documentElement.classList.toggle("dark");
+    const isDark = document.documentElement.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  document
+    .getElementById("toggleTheme")
+    ?.addEventListener("click", handleToggleClick);
+</script>

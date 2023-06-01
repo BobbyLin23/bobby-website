@@ -14,7 +14,7 @@ export default defineConfig({
     }),
     presetUno(),
     presetMini({
-      dark: "media",
+      dark: "class",
     }),
   ],
 });

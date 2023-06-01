@@ -15,14 +15,16 @@ const { title, description } = Astro.props;
   shadow-sm
   rounded-md
   bg-zinc-200
+  dark:bg-neutral-700
   items-center
   gap-6
   cursor-pointer
   hover:bg-zinc-300
+  dark:hover:bg-neutral-500
 >
   <div class="i-carbon-application-web ml-2 text-xl"></div>
   <div class="flex" flex-col gap-2>
     <h1 font-600>{title}</h1>
-    <p text-gray-600 text-sm>{description}</p>
+    <p text-gray-600 dark:text-gray-400 text-sm>{description}</p>
   </div>
 </div>

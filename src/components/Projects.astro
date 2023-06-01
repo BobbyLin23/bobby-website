@@ -40,12 +40,12 @@ const projects: ProjectList[] = [
     <h1 text-2xl font-semibold>Projects</h1>
     <a href="/projects">
       <div
-        class="i-carbon-arrow-up-right cursor-pointer text-neutral-600 hover:text-neutral-400"
+        class="i-carbon-arrow-up-right cursor-pointer dark:text-white text-neutral-600 hover:text-neutral-400"
       >
       </div>
     </a>
   </header>
-  <div class="grid" grid-cols-2 gap-4>
+  <div class="grid grid-cols-2 gap-4">
     {
       projects.map((project) => (
         <ProjectCard
