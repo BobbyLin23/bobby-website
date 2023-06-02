@@ -1,0 +1,14 @@
+---
+import "../styles/global.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<div px-40 py-[80vh] max-w-[76ch] mx-auto xl:text-lg>
+  <h1 text-3xl font-bold mt-10 mb-5>{frontmatter.title}</h1>
+  <p>Published on: {frontmatter.pubDate.slice(0, 10)}</p>
+  <p>Written By {frontmatter.author}</p>
+  <div mt-10>
+    <slot />
+  </div>
+</div>

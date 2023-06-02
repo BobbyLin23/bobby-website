@@ -1,4 +1,31 @@
 ---
+import PostCard from "../components/PostCard.astro";
+import "../styles/global.css";
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
-<div>Posts</div>
+<div px-40 py-[80vh] max-w-[76ch] mx-auto xl:text-lg>
+  <h2 text-3xl font-bold>Bobby's Posts</h2>
+  <div w-full border-b border-solid border-neutral border-opacity-40 my-8></div>
+  <ul class="grid grid-cols-2 gap-4">
+    <!-- {
+      allPosts.map((post) => (
+        <li>
+          <a href={post.url}>
+            {post.frontmatter.title}
+          </a>  
+        </li>
+      ))
+    } -->
+    {
+      allPosts.map((post) => (
+        <PostCard
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          url={post.url}
+        />
+      ))
+    }
+  </ul>
+</div>
